@@ -1,7 +1,7 @@
 /*
  * Create a list that holds all of your cards
  */
-
+let cardList = [];
 
 /*
  * Display the cards on the page
@@ -9,6 +9,9 @@
  *   - loop through each card and create its HTML
  *   - add each card's HTML to the page
  */
+
+//function to display cards and shuffice them
+
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
@@ -36,3 +39,38 @@ function shuffle(array) {
  *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
+
+//selecting parent element of cards
+const deck = document.querySelector('.deck');
+
+//toggling cards
+deck.addEventListener('click', function(event) {
+  const clickTarget = event.target;
+  if (clickTarget.classList.contains('card') && cardList.length < 2){
+    console.log("I'm a card!");
+    clickTarget.classList.toggle('open');
+    clickTarget.classList.toggle('show');
+
+    cardList.push(clickTarget);
+
+    if (cardList.length === 2){
+      checkCards();
+    }
+
+  }
+
+function checkCards(){
+  if (cardList[0].firstElementChild.className === cardList[1].firstElementChild.className) {
+      //call function that will lock cards into open positions
+    } else {
+      //call function that will remove the card from cardList and hide it again
+    }
+
+//function to change card's class to open position
+
+
+//function to remove card from cardList and hide it again
+
+}
+
+});
