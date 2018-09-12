@@ -43,9 +43,10 @@ function shuffle(array) {
 
    if (cardListArray[0].firstElementChild.className === cardListArray[1].firstElementChild.className) {
        //call function that will lock cards into open positions
-         cardListArray[0].className = "match";
-         cardListArray[1].className = "match";
+        var arrOfClass = document.getElementsByClassName("show open");
 
+         varrOfClass[0].setAttribute("class", "match");
+         varrOfClass[1].setAttribute("class", "match");
 
        console.log('lock into position');
      } else {
