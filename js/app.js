@@ -39,26 +39,28 @@ function shuffle(array) {
  *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
+
+//call function that will remove the card from cardList and hide it again
+//function to change card's class to open position
+//function to remove card from cardList and hide it again
  function checkCards(cardListArray){
 
    if (cardListArray[0].firstElementChild.className === cardListArray[1].firstElementChild.className) {
        //call function that will lock cards into open positions
         var arrOfClass = document.getElementsByClassName("show open");
 
-         varrOfClass[0].setAttribute("class", "match");
-         varrOfClass[1].setAttribute("class", "match");
-
-       console.log('lock into position');
+         arrOfClass[0].setAttribute("class", "card match");
+         arrOfClass[1].setAttribute("class", "card match");
+         console.log('lock into position');
      } else {
-       //cardList[]='';
-       //call function that will remove the card from cardList and hide it again
-     }
-
- //function to change card's class to open position
-
-
- //function to remove card from cardList and hide it again
-
+        /*/setTimeOut(() => {
+          cardList[0].classList.toggle('open');
+          cardList[0].classList.toggle('show');
+          cardList[1].classList.toggle('open');
+          cardList[1].classList.toggle('show');
+          cardList = [];
+        //}, 0);*/
+    }
  }
 
 
