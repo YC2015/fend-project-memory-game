@@ -67,13 +67,16 @@ function shuffle(array) {
           console.log('lock into position');
 
      } else {
+
+       //setTimeout after trying other methods;
+       setTimeout(() => {
        var arrOfClass = document.getElementsByClassName("show open");
        //fixed numbering by learning more about get ElementsByClass Name ==> live list [Stack Overflow]
         arrOfClass[0].setAttribute("class", "card");
         arrOfClass[0].setAttribute("class", "card");
         arrOfClass = [];
         console.log('reverts back')
-
+      }, 1000);
     }
 
  }
@@ -97,7 +100,4 @@ deck.addEventListener('click', function(event) {
     }
 
   }
-
-
-
 });
