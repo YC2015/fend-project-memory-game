@@ -3,6 +3,8 @@
  */
 let cardList = [];
 
+
+
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
@@ -11,6 +13,15 @@ let cardList = [];
  */
 
 //function to display cards and shuffice them
+//Display cards all as cards down; function not working properly
+/*function cardsDown(){
+  var arrOfClass = document.getElementsByClassName("card");
+
+  for (var =0, i < arrOfClass.length; i++)
+   arrOfClass[i].setAttribute("class", "card");
+}
+
+cardsDown();*/
 
 
 // Shuffle function from http://stackoverflow.com/a/2450976
@@ -49,26 +60,29 @@ function shuffle(array) {
        //call function that will lock cards into open positions
         var arrOfClass = document.getElementsByClassName("show open");
 
-         arrOfClass[0].setAttribute("class", "card match");
-         arrOfClass[1].setAttribute("class", "card match");
-         console.log('lock into position');
+          arrOfClass[0].setAttribute("class", "card match");
+          arrOfClass[0].setAttribute("class", "card match");
+          console.log(arrOfClass);
+          console.log(arrOfClass.length);
+          console.log('lock into position');
+
      } else {
-        /*/setTimeOut(() => {
-          cardList[0].classList.toggle('open');
-          cardList[0].classList.toggle('show');
-          cardList[1].classList.toggle('open');
-          cardList[1].classList.toggle('show');
-          cardList = [];
-        //}, 0);*/
+       var arrOfClass = document.getElementsByClassName("show open");
+       //fixed numbering by learning more about get ElementsByClass Name ==> live list [Stack Overflow]
+        arrOfClass[0].setAttribute("class", "card");
+        arrOfClass[0].setAttribute("class", "card");
+        arrOfClass = [];
+        console.log('reverts back')
+
     }
+
  }
-
-
 
 //selecting parent element of cards
 const deck = document.querySelector('.deck');
 
-//toggling cards
+
+//toggling cards [Fellow classmate Mathew Cranford Blog]
 deck.addEventListener('click', function(event) {
   const clickTarget = event.target;
   if (clickTarget.classList.contains('card') && cardList.length < 2){
