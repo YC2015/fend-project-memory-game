@@ -74,7 +74,8 @@ function shuffle(array) {
        //fixed numbering by learning more about get ElementsByClass Name ==> live list [Stack Overflow]
         arrOfClass[0].setAttribute("class", "card");
         arrOfClass[0].setAttribute("class", "card");
-        arrOfClass = [];
+        //arrOfClass = [];
+        cardList=[];
         console.log('reverts back')
       }, 1000);
     }
