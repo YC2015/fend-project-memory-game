@@ -62,6 +62,7 @@ function shuffle(array) {
 
           arrOfClass[0].setAttribute("class", "card match");
           arrOfClass[0].setAttribute("class", "card match");
+          cardList=[];
           console.log(arrOfClass);
           console.log(arrOfClass.length);
           console.log('lock into position');
